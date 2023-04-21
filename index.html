@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CRC Card Maker</title>
+        <!-- Link to CSS file for styling -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1><b>CRC Card Maker</b></h1>
+        <p id="names">Will Wylie, Matthew Gasawneh, Fadi Baza, Hadeel Akhdar</p>
+        
+        <button class="main-btn" onclick="openPopup()">Create Card</button>
+        <div id="cards-container">
+
+        </div>
+        <div class="form-popup" id="popup">
+            <form class="form-container">
+            <label for="class-input"><b>Class: </b></label>
+            <input type="text" placeholder="Enter class name" name="class-input" id="class-input" required>
+            <label for="resposibilities-input"><b>Responsibilities: </b></label>
+            <input type="text" placeholder="Comma-Separated" name="responsibilities-input" id="responsibilities-input" required>
+            <label for="collaborators-input"><b>Collaborators: </b></label>
+            <input type="text" placeholder="Comma-Separated (no spaces)" name="collaborators-input" id="collaborators-input" required>
+            <button type="button" class="form-btn" onclick="createCard()">Submit</button>
+            <button type="button" class="form-btn" onclick="closePopup()">Cancel</button>
+            </form>
+        </div>
+
+        <script src="scripts.js"></script>
+    </body>
+</html>
