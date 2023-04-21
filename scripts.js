@@ -4,21 +4,34 @@ function openPopup() {
 
 function closePopup() {
   document.getElementById("popup").style.display = "none";
+  document.getElementById("class-input").value = "";
+  document.getElementById("responsibilities-input").value = "";
+  document.getElementById("collaborators-input").value = "";
 }
 
 function createCard() {
   let classInput = document.getElementById("class-input").value;
   let responsibilitiesInput = document.getElementById("responsibilities-input").value;
   let collaboratorsInput = document.getElementById("collaborators-input").value;
-  alert(classInput + responsibilitiesInput + collaboratorsInput);
   newCard = document.createElement("div");
   newCard.className = "card";
-  let classInsert = "<h2>" + classInput + "</h2>";
-  let responsibilitiesInsert = "<ul>";
-  let collaboratorsInsert = "<ul>";
-  responsibilitiesInput.split(",").forEach(e => responsibilitiesInsert.concat("<li>" + e + "</li>"));
-  collaboratorsInput.split(",").forEach(e => collaboratorsInsert.concat("<li>" + e + "</li>"));
-  newCard.innerHTML = classInsert + collaboratorsInsert + "</ul>" + responsibilitiesInsert + "</ul>";
+  let classInsert = document.createElement("h2");
+  classInsert.innerHTML = classInput;
+  let responsibilitiesInsert = document.createElement("ul");
+  let collaboratorsInsert = document.createElement("ul");
+  responsibilitiesInput.split(",").forEach(e => {
+    let tmp = document.createElement("li");
+    tmp.innerHTML = e;
+    responsibilitiesInsert.appendChild(tmp);
+  });
+  collaboratorsInput.split(",").forEach(e => {
+    let tmp = document.createElement("li");
+    tmp.innerHTML = e; 
+    collaboratorsInsert.appendChild(tmp);
+  });
+  newCard.appendChild(classInsert);
+  newCard.appendChild(responsibilitiesInsert);
+  newCard.appendChild(collaboratorsInsert);
   document.getElementById("cards-container").appendChild(newCard);
   closePopup();
 }
