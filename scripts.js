@@ -1,8 +1,3 @@
-var form=document.getElementById("form-container");
-function submitForm(event){
-   event.preventDefault();
-}
-
 function openPopup() {
   document.getElementById("popup").style.display = "block";
 }
