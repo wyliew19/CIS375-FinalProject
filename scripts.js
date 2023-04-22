@@ -46,3 +46,5 @@ function createCard() {
   document.getElementById("cards-container").appendChild(newCard);
   closePopup();
 }
+
+
