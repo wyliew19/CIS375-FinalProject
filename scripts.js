@@ -29,9 +29,12 @@ function createCard() {
     tmp.innerHTML = e; 
     collaboratorsInsert.appendChild(tmp);
   });
+  let listsInsert = document.createElement("div");
+  listsInsert.className = "lists-container"
+  listsInsert.appendChild(responsibilitiesInsert);
+  listsInsert.appendChild(collaboratorsInsert);
   newCard.appendChild(classInsert);
-  newCard.appendChild(responsibilitiesInsert);
-  newCard.appendChild(collaboratorsInsert);
+  newCard.appendChild(listsInsert);
   document.getElementById("cards-container").appendChild(newCard);
   closePopup();
 }
