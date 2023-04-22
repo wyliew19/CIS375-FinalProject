@@ -1,3 +1,5 @@
+var crcCards = [];
+
 function openPopup() {
   document.getElementById("popup").style.display = "block";
 }
@@ -33,8 +35,14 @@ function createCard() {
   listsInsert.className = "lists-container"
   listsInsert.appendChild(responsibilitiesInsert);
   listsInsert.appendChild(collaboratorsInsert);
+  let deleteBtn = document.createElement("button");
+  deleteBtn.innerHTML = "Delete";
+  deleteBtn.onclick = function() {
+    this.parentNode.remove();
+  }
   newCard.appendChild(classInsert);
   newCard.appendChild(listsInsert);
+  newCard.appendChild(deleteBtn);
   document.getElementById("cards-container").appendChild(newCard);
   closePopup();
 }
