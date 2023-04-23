@@ -11,7 +11,12 @@
         <h1><b>CRC Card Maker</b></h1>
         <p id="names">Will Wylie, Matthew Gasawneh, Fadi Baza, Hadeel Akhdar</p>
         
-        <button class="main-btn" onclick="openPopup()">Create Card</button>
+        <div id="button-container">
+            <button class="main-btn" onclick="openPopup()">Create Card</button>
+            <button class="main-btn" onclick="exportSet()">Export</button>
+            <button class="main-btn" onclick="importSet()">Import</button>
+        </div>
+        
         <div id="cards-container">
 
         </div>
@@ -23,7 +28,7 @@
             <input type="text" placeholder="Comma-Separated" name="responsibilities-input" id="responsibilities-input" required>
             <label for="collaborators-input"><b>Collaborators: </b></label>
             <input type="text" placeholder="Comma-Separated (no spaces)" name="collaborators-input" id="collaborators-input" required>
-            <button type="button" class="form-btn" onclick="createCard()">Submit</button>
+            <button type="button" class="form-btn" onclick="submitButton()">Submit</button>
             <button type="button" class="form-btn" onclick="closePopup()">Cancel</button>
             </form>
         </div>

@@ -41,6 +41,12 @@ li {
     font-size: small;
 }
 
+#button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .form-popup {
     display: none;
     position: fixed;
