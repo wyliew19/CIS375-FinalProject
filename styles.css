@@ -4,7 +4,7 @@ body {
 }
   
 h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 0px;
@@ -48,12 +48,6 @@ button {
 
 button:hover {
     background-color: #2f409e;
-}
-
-#names {
-    text-align: center;
-    margin-top: 0px;
-    font-size: small;
 }
 
 #button-container {
