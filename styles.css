@@ -38,7 +38,7 @@ li {
 
 button {
     text-align: center;
-    background-color: #3f51b5;
+    background-color: #4570dd;
     color: #ffffff;
     border: none;
     border-radius: 0.5rem;
@@ -47,7 +47,7 @@ button {
 }
 
 button:hover {
-    background-color: #2f409e;
+    background-color: #3449c6;
 }
 
 #button-container {
@@ -124,6 +124,12 @@ button:hover {
     margin: 15px auto;
     max-width: 600px;
     padding: 0;
+}
+
+.card-btns {
+    display: flex;
+    width: 600px;
+    max-width: 600px;
 }
 
 .delete-btn {

@@ -7,6 +7,13 @@ Array.prototype.swap = function (a, b) {
   return this;
 }
 
+Array.prototype.removeElement = function (index) {
+  if (index > -1) {
+    this.splice(index,1);
+  }
+  return this;
+}
+
 function Card(className, respList, collabList) {
   this.className = className;
   this.respList = respList;
@@ -47,6 +54,7 @@ function exportSet() {
   for (let card of crcCards) {
     output = output.concat(card.className, "|", card.respList, "|", card.collabList, ";");
   }
+  output = output.slice(0,-1);
   navigator.clipboard.writeText(output);
   alert("Card set information copied to clipboard.");
 }
@@ -98,17 +106,22 @@ function createCard(classInput, responsibilitiesInput, collaboratorsInput) {
   deleteBtn.className = "delete-btn";
   deleteBtn.innerHTML = "Delete";
   deleteBtn.dataset.className = classInput;
+  deleteBtn.dataset.respList = responsibilitiesInput;
+  deleteBtn.dataset.collabList = collaboratorsInput;
   deleteBtn.onclick = function () {
     if (confirm("Are you sure you wish to delete \"".concat(this.dataset.className, "\"?"))) {
       for (let i = 0; i < crcCards.length - 1; i++) {
         if (this.dataset.className === crcCards[i].className) {
-          crcCards.splice(i,i);
+          crcCards.removeElement(i);
           break;
         }
       }
+
       this.parentNode.remove();
     }
   };
+
+
 
   newCard.appendChild(classInsert);
   newCard.appendChild(listsInsert);
