@@ -4,6 +4,7 @@ body {
 }
   
 h1 {
+    font-size: 2.5rem;
     text-align: center;
     margin-top: 20px;
     margin-bottom: 0px;
@@ -24,15 +25,29 @@ h2 {
 ul {
     border: 1px solid black;
     margin: 0;
-    padding: 0;
-    padding-left: 10px;
+    padding: 0.5rem 0 0.5rem 10px;
     width: 289px;
     max-width: 289px;
     list-style-position: inside;
 }
 
 li {
+    margin: 0.25rem 0;
     width: 289px;
+}
+
+button {
+    text-align: center;
+    background-color: #3f51b5;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: medium;
+}
+
+button:hover {
+    background-color: #2f409e;
 }
 
 #names {
@@ -45,29 +60,57 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 20px 0;
 }
+
+#create-btn {
+    background-color: #12b91d;
+}
+
+#create-btn:hover {
+    background-color: #0e9c17;
+}
+
+.main-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    margin: 0 15px;
+    line-height: 1.25rem;
+}
+
 
 .form-popup {
     display: none;
     position: fixed;
     bottom: 0;
-    right:0;
+    right: 0;
 }
 
 
 .form-container {
-    max-width: 300px;
+    max-width: 500px;
+    max-height: 800px;
     padding: 10px;
+    border: 2px solid black;
+    border-bottom: none;
+    border-right: none;
+    border-top-left-radius: 1rem;
     background-color: #ebebeb;
 }
 
 
 .form-container input[type=text]{
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0px 22px 0;
-    border: none;
+    width: 460px;
+    padding: 15px 20px;
+    margin: 10px 0px 50px 0;
+    border: 1px solid #6e6e6e;
     background: #f1f1f1;
+    font-size: medium;
+    overflow-x: auto;
+}
+
+.form-container label {
+    font-size: large;
 }
 
 .form-btn {
@@ -87,4 +130,13 @@ li {
     margin: 15px auto;
     max-width: 600px;
     padding: 0;
+}
+
+.delete-btn {
+    margin-top: 10px;
+    background-color: #e21811;
+}
+
+.delete-btn:hover {
+    background-color: #a40f0a;
 }

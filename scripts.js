@@ -95,16 +95,17 @@ function createCard(classInput, responsibilitiesInput, collaboratorsInput) {
   listsInsert.appendChild(responsibilitiesInsert);
   listsInsert.appendChild(collaboratorsInsert);
   let deleteBtn = document.createElement("button");
+  deleteBtn.className = "delete-btn";
   deleteBtn.innerHTML = "Delete";
   deleteBtn.dataset.className = classInput;
   deleteBtn.onclick = function () {
     if (confirm("Are you sure you wish to delete \"".concat(this.dataset.className, "\"?"))) {
       for (let i = 0; i < crcCards.length - 1; i++) {
         if (this.dataset.className === crcCards[i].className) {
-          crcCards.swap(i, i + 1);
+          crcCards.splice(i,i);
+          break;
         }
       }
-      crcCards.pop();
       this.parentNode.remove();
     }
   };
